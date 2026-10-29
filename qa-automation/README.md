@@ -45,6 +45,30 @@ npm test
 
 The configuration runs Chromium only.
 
+You can also run a specific group or test file:
+
+```powershell
+# UI tests only
+npx playwright test tests/ui
+
+# API tests only
+npx playwright test tests/api
+
+# A specific test file
+npx playwright test tests/ui/login.spec.ts
+npx playwright test tests/ui/cart.spec.ts
+npx playwright test tests/api/users.spec.ts
+
+# A specific test by name
+npx playwright test -g "valid user sees the Products title"
+
+# Run with the browser visible
+npx playwright test --headed
+
+# List all discovered tests
+npx playwright test --list
+```
+
 If `REQRES_API_KEY` is not set, the three ReqRes API tests are skipped with a
 clear message. The SauceDemo UI tests still run. ReqRes is a public
 third-party service, so API tests also depend on internet access and the

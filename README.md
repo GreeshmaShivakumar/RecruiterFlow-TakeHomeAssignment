@@ -16,11 +16,10 @@ without starting the others.
 
 ## Getting the code
 
-Clone the repository and move into its directory. Replace the placeholder URL
-with the repository URL supplied for this assignment:
+Clone the repository and move into its directory:
 
 ```powershell
-git clone <repository-url>
+git clone https://github.com/GreeshmaShivakumar/RecruiterFlow-TakeHomeAssignment.git
 cd RecruiterFlow-TakeHomeAssignment
 ```
 
@@ -70,6 +69,30 @@ Open `.env`, set `REQRES_API_KEY` to your key, and run the complete suite:
 
 ```powershell
 npm test
+```
+
+You can also run a specific group or test file:
+
+```powershell
+# UI tests only
+npx playwright test tests/ui
+
+# API tests only
+npx playwright test tests/api
+
+# A specific test file
+npx playwright test tests/ui/login.spec.ts
+npx playwright test tests/ui/cart.spec.ts
+npx playwright test tests/api/users.spec.ts
+
+# A specific test by name
+npx playwright test -g "valid user sees the Products title"
+
+# Run with the browser visible
+npx playwright test --headed
+
+# List all discovered tests
+npx playwright test --list
 ```
 
 See [qa-automation/README.md](./qa-automation/README.md) for the test
